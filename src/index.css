@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+/* Timeline animations */
+.timeline-date {
+  transition: all 0.5s ease-out;
+}
+
+.animate-date {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.timeline-content {
+  transition: all 0.5s ease-out;
+}
+
+.animate-content {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Portfolio animations */
+.portfolio-item {
+  transition: all 0.5s ease-out;
+}
+
+.animate-portfolio-item {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Modal animations */
+@keyframes modalBackdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalContent {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-modal-backdrop {
+  animation: modalBackdrop 0.3s ease-out forwards;
+}
+
+.animate-modal-content {
+  animation: modalContent 0.3s ease-out forwards;
+}
+
+/* Skills animations */
+.skill-item {
+  transition: all 0.5s ease-out;
+}
+
+.animate-skill-item {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.progress-bar-fill {
+  width: 0;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-bar-fill.animate {
+  width: var(--target-width);
+}
+
+/* Title animations */
+.animate-title {
+  animation: slideDown 0.8s ease-out forwards;
+  letter-spacing: -0.02em;
+}
+
+.animate-subtitle {
+  animation: slideUp 0.8s ease-out forwards;
+  letter-spacing: -0.01em;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* About section animations */
+.animate-slide-right {
+  animation: slideRight 0.8s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideLeft 0.8s ease-out forwards;
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in animation */
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Count up animation */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-count-up {
+  animation: countUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Blob animation */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Parallax effect */
+.parallax {
+  transform: translateY(var(--parallax-y, 0));
+  transition: transform 0.1s ease-out;
+}
+
+/* Hover effects */
+.hover-gradient {
+  background-size: 200% 200%;
+  transition: all 0.3s ease-in-out;
+}
+
+.hover-gradient:hover {
+  background-position: right center;
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover effects */
+.button-hover {
+  transition: all 0.3s ease-in-out;
+  background-size: 200% auto;
+}
+
+.button-hover:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+}
